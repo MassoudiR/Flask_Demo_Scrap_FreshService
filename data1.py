@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from selenium.webdriver.support.ui import Select
 #L'objet Options est utilisé pour définir les préférences et les options du WebDriver Chrome
-def freshservice():
+def freshservice(email,password,ticket):
     chrome_options = Options()
     #utilise la méthode add_extension de l'objet Options pour ajouter une extension Chrome au WebDriver.
     chrome_options.add_extension('buster.crx')
@@ -25,8 +25,8 @@ def freshservice():
     username = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, 'username')))
     password = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, 'password')))
 
-    username.send_keys("samir.zidi@isimsf.u-sfax.tn")
-    password.send_keys("foussana1220")
+    username.send_keys(email)
+    password.send_keys(password)
     login = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CLASS_NAME,'css-o1ejds')))
     driver.execute_script("arguments[0].scrollIntoView();", login)
     login.click()

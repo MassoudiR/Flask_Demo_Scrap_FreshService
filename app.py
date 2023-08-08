@@ -10,12 +10,9 @@ def home():
         passowed = request.form.get('Password')
         Ticket_ID = request.form.get('Ticket_ID')
         remember_me = request.form.get('remember_me')
-        print(email)
-        print(passowed)
-        print(Ticket_ID)
-        print(remember_me)
+
         return('OK ! ....')
         
-        ##data1.freshservice()
+        data1.freshservice(email,password,ticket)
         
     return render_template('index.html')
