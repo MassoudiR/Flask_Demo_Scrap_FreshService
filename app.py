@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request
 import data1
 
+app = Flask(__name__)
 
 @app.route('/',methods=('GET','POST'))
 def home():
@@ -18,5 +19,3 @@ def home():
         ##data1.freshservice()
         
     return render_template('index.html')
-
-app = Flask(__name__)
