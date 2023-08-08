@@ -1,9 +1,7 @@
 from flask import Flask,render_template,request
 import data1
 
-"""@app.route("/")
- def home():
-    return render_template('index.html')"""
+
 @app.route('/',methods=('GET','POST'))
 def home():
     if request.method=="POST":
